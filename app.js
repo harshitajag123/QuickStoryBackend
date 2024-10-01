@@ -16,7 +16,7 @@ dotenv.config();
 
 const allowedOrigins = [
 	"http://localhost:5173",
-	"https://theswiptory.netlify.app",
+	"https://web-story-three.vercel.app",
 ];
 const corsOptions = {
 	origin: function (origin, callback) {
@@ -29,6 +29,7 @@ const corsOptions = {
 			callback(new Error("Not allowed by CORS")); // Block the request
 		}
 	},
+	optionsSuccessStatus: 200, // For legacy browser support
 };
 
 const app = express();
