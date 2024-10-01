@@ -33,6 +33,8 @@ const corsOptions = {
 };
 
 const app = express();
+app.options('*', cors()); // Enable pre-flight requests for all routes
+
 
 //morgan
 if (process.env.NODE_ENV != "production") {
@@ -62,8 +64,8 @@ app.use("/api/v1", routes);
 
 // API routes
 app.use("/api/v1/auth", authRoutes); // Auth routes
-app.use("/api/stories", storyRoutes); // Story routes
-//app.use("/api/v1/stories", storyRoutes); // Story routes
+//app.use("/api/stories", storyRoutes); // Story routes
+app.use("/api/v1/stories", storyRoutes); // Story routes
 
 app.use("/api/v1/users", userRoutes); // User routes
 
