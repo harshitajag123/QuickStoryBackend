@@ -17,6 +17,7 @@ dotenv.config();
 const allowedOrigins = [
 	"http://localhost:5173",
 	"https://web-story-three.vercel.app",
+	"*",
 ];
 const corsOptions = {
 	origin: function (origin, callback) {
@@ -33,8 +34,7 @@ const corsOptions = {
 };
 
 const app = express();
-app.options('*', cors()); // Enable pre-flight requests for all routes
-
+app.options("*", cors()); // Enable pre-flight requests for all routes
 
 //morgan
 if (process.env.NODE_ENV != "production") {
