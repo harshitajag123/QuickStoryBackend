@@ -62,7 +62,9 @@ app.use("/api/v1", routes);
 
 // API routes
 app.use("/api/v1/auth", authRoutes); // Auth routes
-app.use("/api/v1/stories", storyRoutes); // Story routes
+app.use("/api/stories", storyRoutes); // Story routes
+//app.use("/api/v1/stories", storyRoutes); // Story routes
+
 app.use("/api/v1/users", userRoutes); // User routes
 
 app.get("/test", (req, res) => {
